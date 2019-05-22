@@ -9,7 +9,7 @@
 <div id="ubicacion"></div>
 <script type="text/javascript">
 if(navigator.geolocation){
-	navigator.geolocation.getCurrentPosition (mostrarUbicacion);
+	navigator.geolocation.getCurrentPosition(mostrarUbicacion);
 }else(alert("¡Error! Este navegador no soporta la Geolocalizacion.");}
 function refrescarUbicacion(){
 	navigator.geolocation.watchPosition(mostrarUbicacion);}
@@ -24,7 +24,7 @@ function refrescarUbicacion(){
 <script type="text/javascript">
 var x=document.getElementById("demo");
 function cargarmap(){
-	navigator.geolocation.getCurrentPosition (showPosition,showError);
+	navigator.geolocation.getCurrentPosition(showPosition,showError);
 	function showPosition(position)
 	{
 	lat=position.coords.latitude;
@@ -35,8 +35,8 @@ function cargarmap(){
 	mapholder.style.width='750px';
 	var miOptions={
 	center:lation,zoom:17,
-	mapTypeld:google.maps.MapTypeld.ROADMAP,
-	mapTypeldControl: false,
+	mapTypeId:google.maps.MapTypeId.ROADMAP,
+	mapTypeIdControl: false,
 	navigationControlOptions:{style:google.maps.NavigationControlStyle.SMALL}
 	};
 	var map=new google.maps.Map(document.getElementById("mapholder"),miOptions);
