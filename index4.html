@@ -9,8 +9,8 @@
 <div id="ubicacion"></div>
 <script type="text/javascript">
 if(navigator.geolocation){
-	navigator.geolocation.getCurrentPosition(mostrarUbicacion);
-}else(alert("¡Error!Este navegador no soporta la Geolocalizacion.");}
+	navigator.geolocation.getCurrentPosition (mostrarUbicacion);
+}else(alert("¡Error! Este navegador no soporta la Geolocalizacion.");}
 function refrescarUbicacion(){
 	navigator.geolocation.watchPosition(mostrarUbicacion);}
 </script>
@@ -24,38 +24,38 @@ function refrescarUbicacion(){
 <script type="text/javascript">
 var x=document.getElementById("demo");
 function cargarmap(){
-	navigator.geolocation.getCurrentPosition(showPosition,sowError);
+	navigator.geolocation.getCurrentPosition (showPosition,showError);
 	function showPosition(position)
 	{
 	lat=position.coords.latitude;
 	ion=position.coords.longitude;
-	latlon=new google.maps.LatLng(lat.lon)
+	latlon=new google.maps.LatLng(lat,lon)
 	mapholder=document.getElementById('mapholder')
 	mapholder.style.height='500px';
 	mapholder.style.width='750px';
 	var miOptions={
-	center:lation.zoom:17,
+	center:lation,zoom:17,
 	mapTypeld:google.maps.MapTypeld.ROADMAP,
 	mapTypeldControl: false,
 	navigationControlOptions:{style:google.maps.NavigationControlStyle.SMALL}
 	};
-	var map=new google.maps.Map(document.getElementById("mapholder").miOptions);
-	var marker=new google.maps.Marker({position:lation.map:map.title:"You are here!"});
+	var map=new google.maps.Map(document.getElementById("mapholder"),miOptions);
+	var marker=new google.maps.Marker({position:lation,map:map,title:"You are here!"});
 	}
 	function showError(error)
 }
 switch(error.code)
 {
-	case error.PERMISSION_DENIED;
+	case error.PERMISSION_DENIED:
 	x.innerHTML="Denegada la peticion de Geolocalizacion en el navegador."
 	break;
 	case error.POSITION_UNAVAILABLE;
-	x.innerHTML="L informacion de la localizacion no esta disponible."
+	x.innerHTML="La informacion de la localizacion no esta disponible."
 	break;
-	case error.TIMEOUT;
-	x.innerHTML="	El tiempo de peticion ha expirado."
+	case error.TIMEOUT:
+	x.innerHTML="El tiempo de peticion ha expirado."
 	break;
-	case error.UNKNOWN_ERROR;
+	case error.UNKNOWN_ERROR:
 	x.innerHTML="Ha ocurrido un error desconocido."
 	break;
 }
